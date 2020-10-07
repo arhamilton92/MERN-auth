@@ -1,9 +1,17 @@
 import React, { Fragment } from 'react';
 
 const Layout = ({ children }) => {
+
+    const nav = () => (
+        <ul className="nav nav-tabs bg-primary">
+            <li className="nav-item">
+                <a href="/" className="text-light nav-link">Home</a>
+            </li>
+        </ul>
+    )
     return (
         <Fragment>
-            <p>NAVIGATION</p>
+            {nav()}
             <div className="container">
                 { children }
             </div>
