@@ -1,0 +1,7 @@
+{
+    "mongoURI": "mongodb+srv://banan:banan123@cluster0.4oxiq.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret": "supersecret",
+    "nodeENV": "development",
+    "PORT": "8000",
+    "clientURL": "http://localhost:3000"
+}
