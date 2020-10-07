@@ -1,7 +1,12 @@
 {
     "mongoURI": "mongodb+srv://banan:banan123@cluster0.4oxiq.mongodb.net/<dbname>?retryWrites=true&w=majority",
-    "jwtSecret": "supersecret",
+    "jwtSecret": "asdadsa76sa8d6sad67sad67sa8",
+    "jwtAccountActivation": "dsfhkl;jiwejv,cxs7ds86fds97fds87lkktdgbdsvfdsv7fds98f7",
     "nodeENV": "development",
     "PORT": "8000",
-    "clientURL": "http://localhost:3000"
+    "clientURL": "http://localhost:3000",
+    "sendGridAPIKey": "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",
+    "emailTo": "andrea.r.hamilton92@gmail.com",
+    "emailFrom": "anbaile92@gmail.com",
+    "jwtResetPassword": "jadklsuojkas98a9d7sa8d97sa9dHGKSJGKaijdsadja"
 }

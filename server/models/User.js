@@ -3,12 +3,13 @@ const crypto = require('crypto');
 const { match } = require('assert');
 
 // user schema
-const userSchema = new Mongoose.Schema({
+const userSchema = new mongoose.Schema({
     name: {
         type: String,
         trim: true,
         required: true,
-        max: 32
+        max: 32,
+        unique: true
     },
     email: {
         type: String,
