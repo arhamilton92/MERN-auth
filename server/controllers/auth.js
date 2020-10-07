@@ -51,6 +51,33 @@ exports.signup = (req, res) => {
 exports.accountActivation = (req, res) => {
     const { token } = req.body
     if(token) {
-        jwt.verify(token, config.jwtAccountActivation)
+        jwt.verify(token, config.jwtAccountActivation, function(err, decoded) {
+            if(err) {
+                console.log('JWT VERIFY ACCOUNT ACTIVATION ERROR')
+                return res.status(401).json({
+                    error: 'Expired link. Signup again.'
+                })
+            }
+        })
+
+        const { name, email, password } = jwt.decode(token)
+        const user = new User({ name, email, password })
+
+        user.save((err, user) => {
+            if(err) {
+                console.log('SAVE USER ACCOUNT ACTIVATION ERROR')
+                return res.status(401).json({
+                    error: 'Error saving user in database. Try signup again.'
+                })
+            }
+
+            return res.json({
+                message: 'Signup success. Please signin.'
+            })
+        })
+    } else {
+        return res.json({
+            message: 'Something went wrong. Try again.'
+        })
     }
 }
