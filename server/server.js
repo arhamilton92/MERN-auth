@@ -1,11 +1,9 @@
 const express = require('express');
+const mongoose= require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
-const mongoose= require('mongoose');
 const config = require('config');
 const connectDB = require('./config/db');
-const dotenv = require('dotenv');
-dotenv.config({ path: 'ENV_FILENAME' });
 
 const app = express();
 
