@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { isAuth } from '../auth/helpers'
 import { Link, withRouter } from 'react-router-dom';
 
 const Layout = ({ children, match }) => {
@@ -17,16 +18,20 @@ const Layout = ({ children, match }) => {
                     Home 
                 </Link>
             </li>
-            <li className="nav-item">
-                <Link to="/signin" className="nav-link" style={isActive('/signin')}>
-                    Login
-                </Link>
-            </li>
-            <li className="nav-item">
-                <Link to="/signup" className="nav-link" style={isActive('/signup')}>
-                    Sign Up
-                </Link>
-            </li>
+            {!isAuth() && (
+                <Fragment>
+                    <li className="nav-item">
+                        <Link to="/signin" className="nav-link" style={isActive('/signin')}>
+                            Login
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/signup" className="nav-link" style={isActive('/signup')}>
+                            Sign Up
+                        </Link>
+                    </li>
+                </Fragment>
+            )}
         </ul>
     )
     return (
