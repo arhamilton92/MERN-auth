@@ -15,6 +15,11 @@ const Layout = ({ children }) => {
                     Sign Up
                 </Link>
             </li>
+            <li className="nav-item">
+                <Link to="/signin" className="text-light nav-link">
+                    Login
+                </Link>
+            </li>
         </ul>
     )
     return (
