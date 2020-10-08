@@ -2,12 +2,12 @@ import cookie from 'js-cookie';
 
 // set in cookie
 export const setCookie = (key, value) => {
-    if(window !== 'undefined') {
-        cookie.set(key, value {
+    if (window !== 'undefined') {
+        cookie.set(key, value, {
             expires: 1
-        })
+        });
     }
-}
+};
 
 // remove from cookie
 export const removeCookie = (key) => {

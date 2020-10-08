@@ -18,13 +18,13 @@ const Layout = ({ children, match }) => {
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to="/signup" className="nav-link" style={isActive('/signup')}>
-                    Sign Up
+                <Link to="/signin" className="nav-link" style={isActive('/signin')}>
+                    Login
                 </Link>
             </li>
             <li className="nav-item">
-                <Link to="/signin" className="nav-link" style={isActive('/signin')}>
-                    Login
+                <Link to="/signup" className="nav-link" style={isActive('/signup')}>
+                    Sign Up
                 </Link>
             </li>
         </ul>
