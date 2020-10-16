@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import { ToastContainer, toast } from 'react-toastify';
@@ -21,9 +20,10 @@ const Activate = ({ match }) => {
         if(token) {
             setValues({...values, name, token})
         }
+        // eslint-disable-next-line
     }, [])
 
-    const { name, token, show } = values
+    const { name, token } = values
 
     const clickSubmit = (event) => {
         event.preventDefault();

@@ -12,6 +12,8 @@ const App = () => {
           <hr />
           <p className="">This app was created as practice at creating a secure production-ready app with user and admin authentication, 
           and for use as a starting point for future ReactJS projects.</p>
+          <br/>
+          <p>This app supports signup with verification through an email link, login, and password reset/recovery. It contains protected routes only admins may access, private routes all logged in users may access, and the ability to edit certain profile content. </p>
           <hr />
           <h4>Tools used:</h4>
           <br></br>

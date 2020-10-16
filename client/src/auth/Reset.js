@@ -20,6 +20,7 @@ const Reset = ({ match }) => { // props.match from react router dom
         if(token) {
             setValues({ ...values, name, token })
         }
+        // eslint-disable-next-line
     }, [])
 
     const { name, token, newPassword, buttonText } = values

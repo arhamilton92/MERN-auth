@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-import { authenticate, isAuth } from './helpers'
+import { authenticate, isAuth } from './helpers';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.min.css'
+import 'react-toastify/dist/ReactToastify.min.css';
 
-import Layout from '../core/Layout'
+import Layout from '../core/Layout';
+import Google from './Google';
 
 const Signin = ({ history }) => {
     const [values, setValues] = useState({
@@ -44,6 +45,13 @@ const Signin = ({ history }) => {
         })
     }
 
+    const informParent = (res) => {
+        authenticate(res, () => {
+            setValues({...values, email: '', password: '', buttonText: 'Submit'})
+            isAuth() && isAuth().role === 'admin' ? history.push('/admin') : history.push('/private')
+        })
+    }
+
     const signinForm = () => (
         <form>
             <div className="form-group">
@@ -71,7 +79,10 @@ const Signin = ({ history }) => {
                 <ToastContainer />
                 {isAuth() ? <Redirect to="/" /> : null}
                 <h1 className="p-5">Login</h1>
+                <Google informParent={informParent} />
                 {signinForm()}
+                <br/>
+                <Link to="/auth/password/forgot" className="btn btn-sm btn-outline-danger">Forgot Password</Link>
             </div>
         </Layout>
     )

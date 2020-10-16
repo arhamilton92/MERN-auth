@@ -18,6 +18,7 @@ const Admin = ({ history }) => {
 
     useEffect(() => {
         loadProfile();
+        // eslint-disable-next-line
     }, [])
 
     const loadProfile = () => {
@@ -44,7 +45,7 @@ const Admin = ({ history }) => {
         })
     }
 
-    const { name, email, password, buttonText, role } = values
+    const { name, password, buttonText, role } = values
 
     const handleChange = (name) => (event) => {
         setValues({...values, [name]: event.target.value})
